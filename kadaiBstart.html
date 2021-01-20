@@ -18,27 +18,12 @@
       text-align: center;
       line-height: 100px;
     }
-    .daikichi {
-      background: red;
-      border-radius: 50%;
-      transform: rotate(360deg);
-    }
-    .chukichi {
+    .win {
       background: pink;
       border-radius: 50%;
       transform: rotate(360deg);
     }
-    .shokichi {
-      background: yellow;
-      border-radius: 50%;
-      transform: rotate(360deg);
-    }
-    .suekichi {
-      background: green;
-      border-radius: 50%;
-      transform: rotate(360deg);
-    }
-    .kyo {
+    .lose {
       transform: scale(0.9);
     }
   </style>
@@ -48,7 +33,7 @@
   <script>
     'use strict';
 
-    const num = 10;
+    const num = 5;
     const winner = Math.floor(Math.random() * num); // 0 - 4
 
     for (let i = 0; i < num; i++) {
@@ -57,20 +42,11 @@
       
       div.addEventListener('click', () => {
         if (i === winner) {
-          div.textContent = '大吉!';
-          div.classList.add('daikichi');
+          div.textContent = 'Win!';
+          div.classList.add('win');
         } else {
-          div.textContent = '中吉!';
-          div.classList.add('chukichi');
-        }else {
-          div.textContent = '小吉!';
-          div.classList.add('shokichi');
-        }else {
-          div.textContent = '末吉!';
-          div.classList.add('suekichi');
-        }else {
-          div.textContent = '凶!';
-          div.classList.add('kyo');
+          div.textContent = 'Lose!';
+          div.classList.add('lose');
         }
       });
 
