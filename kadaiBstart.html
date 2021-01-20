@@ -18,12 +18,27 @@
       text-align: center;
       line-height: 100px;
     }
-    .win {
+    .daikichi {
+      background: red;
+      border-radius: 50%;
+      transform: rotate(360deg);
+    }
+    .chukichi {
       background: pink;
       border-radius: 50%;
       transform: rotate(360deg);
     }
-    .lose {
+    .shokichi {
+      background: yellow;
+      border-radius: 50%;
+      transform: rotate(360deg);
+    }
+    .suekichi {
+      background: green;
+      border-radius: 50%;
+      transform: rotate(360deg);
+    }
+    .kyo {
       transform: scale(0.9);
     }
   </style>
@@ -43,19 +58,19 @@
       div.addEventListener('click', () => {
         if (i === winner) {
           div.textContent = '大吉!';
-          div.classList.add('win');
+          div.classList.add('daikichi');
         } else {
           div.textContent = '中吉!';
-          div.classList.add('lose');
+          div.classList.add('chukichi');
         }else {
           div.textContent = '小吉!';
-          div.classList.add('lose');
+          div.classList.add('shokichi');
         }else {
           div.textContent = '末吉!';
-          div.classList.add('lose');
+          div.classList.add('suekichi');
         }else {
           div.textContent = '凶!';
-          div.classList.add('lose');
+          div.classList.add('kyo');
         }
       });
 
