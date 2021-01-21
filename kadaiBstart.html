@@ -42,18 +42,13 @@
 
   <script>
     'use strict';
+    
+    const n = 10;
+    var array = ["大吉","中吉","小吉","凶"];
 
-    var array = new Array(10);
-    var size = array.length;
 
-    const n = array.length;
 
-    while (size) {
-      var x = Math.floor( Math.random() * size );
-      var y = array[--size];
-      array[size] = array[x];
-      array[x] = y;
-  }
+    var x = Math.floor( Math.random() * n );
 
     const Daikichi = array[0];
     const Shokichi = array[1];
