@@ -50,10 +50,10 @@
 
     var x = Math.floor( Math.random() * n );
 
-    const Daikichi = array[0];
-    const Shokichi = array[1];
-    const Chukchi = array[2];
-　　 const Kyo = array[3];
+    const daikichi = array[0];
+    const shokichi = array[1];
+    const chukchi = array[2];
+　　 const kyo = array[3];
     
     for (let i = 0; i < n; i++) {
       const div = document.createElement('div');
@@ -67,16 +67,16 @@
 //           div.textContent = 'Lose!';
 //           div.classList.add('lose');
 //         }
-        if (i === Daikichi) {
+        if (i === daikichi) {
           div.textContent = '大吉';
           div.classList.add('daikichi');
-        } else if (i === Shokichi){
+        } else if (i === shokichi){
           div.textContent = '小吉';
           div.classList.add('shokichi');
-        }else if (i === Chukichi){
+        }else if (i === chukichi){
           div.textContent = '中吉';
           div.classList.add('chukichi');
-        }else if (i === Kyo){
+        }else if (i === kyo){
           div.textContent = '凶';
           div.classList.add('kyo');
         }
