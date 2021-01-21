@@ -31,7 +31,7 @@
     .shokichi {
       background: green;
       border-radius: 20%;
-      transform: scale(0.8);
+      transform: rotate(360deg);
     }
     .kyo {
       background: blue;
@@ -43,24 +43,24 @@
   <script>
     'use strict';
 
-    var arr = new array(10);
-    var size = arr.length;
+    var array = new array(10);
+    var size = array.length;
 
-    const num = arr.length;
+    const n = array.length;
 
     while (size) {
       var x = Math.floor( Math.random() * size );
-      var y = arr[--size];
-      arr[size] = arr[x];
-      arr[x] = y;
+      var y = array[--size];
+      array[size] = array[x];
+      array[x] = y;
   }
 
-    const Daikichi = arr[0];
-    const Shokichi = arr[1];
-    const Chukchi = arr[2];
-　　 const Kyo = arr[3];
+    const Daikichi = array[0];
+    const Shokichi = array[1];
+    const Chukchi = array[2];
+　　 const Kyo = array[3];
     
-    for (let i = 0; i < num; i++) {
+    for (let i = 0; i < n; i++) {
       const div = document.createElement('div');
       div.classList.add('box');
       
