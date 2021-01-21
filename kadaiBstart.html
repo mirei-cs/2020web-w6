@@ -18,14 +18,24 @@
       text-align: center;
       line-height: 100px;
     }
-    .win {
-      background: pink;
+    .daikichi {
+      background: red;
       border-radius: 50%;
       transform: rotate(360deg);
     }
-    .lose {
-      transform: scale(0.9);
+    .chukichi {
+      background: yellow;
+      border-radius: 30%;
+      transform: rotate(360deg);
     }
+    .shokichi {
+      background: green;
+      border-radius: 20%;
+      transform: scale(0.8);
+    }
+    .kyo {
+      background: blue;
+      transform: scale(0.6);
   </style>
 </head>
 <body>
@@ -33,21 +43,49 @@
   <script>
     'use strict';
 
-    const num = 5;
-    const winner = Math.floor(Math.random() * num); // 0 - 4
+    var arr = new array(10);
+    var size = arr.length;
 
+    const num = arr.length;
+
+    while (size) {
+      var x = Math.floor( Math.random() * size );
+      var y = arr[--size];
+      arr[size] = arr[x];
+      arr[x] = y;
+  }
+
+    const Daikichi = arr[0];
+    const Shokichi = arr[1];
+    const Chukchi = arr[2];
+　　 const Kyo = arr[3];
+    
     for (let i = 0; i < num; i++) {
       const div = document.createElement('div');
       div.classList.add('box');
       
       div.addEventListener('click', () => {
-        if (i === winner) {
-          div.textContent = 'Win!';
-          div.classList.add('win');
-        } else {
-          div.textContent = 'Lose!';
-          div.classList.add('lose');
+//         if (i === winner) {
+//           div.textContent = 'Win!';
+//           div.classList.add('win');
+//         } else {
+//           div.textContent = 'Lose!';
+//           div.classList.add('lose');
+//         }
+        if (i === Daikichi) {
+          div.textContent = '大吉';
+          div.classList.add('daikichi');
+        } else if (i === Shokichi){
+          div.textContent = '小吉';
+          div.classList.add('shokichi');
+        }else if (i === Chukichi){
+          div.textContent = '中吉';
+          div.classList.add('chukichi');
+        }else if (i === Kyo){
+          div.textContent = '凶';
+          div.classList.add('kyo');
         }
+
       });
 
       document.body.appendChild(div);
