@@ -58,15 +58,15 @@
 
         } else {
           var result = new Array('中吉', '小吉', '凶');
-          const loser = Math.floor(Math.random() * 3);
-          if(loser =0){
-          div.textContent = result[loser];
+          const randomnum = Math.floor(Math.random() * 3);
+          if(randomnum =0){
+          div.textContent = result[randomnum];
           div.classList.add("chu");
-          }else if(loser =1){
-          div.textContent = result[loser];
+          }else if(randomnum =1){
+          div.textContent = result[randomnum];
           div.classList.add("sho");
-          }else if(loser =2){
-          div.textContent = result[loser];
+          }else{
+          div.textContent = result[randomnum];
           div.classList.add("kyo");
           }
         }
