@@ -44,11 +44,11 @@
     'use strict';
     
     const n = 10;
-    var array = ["大吉","中吉","小吉","凶"];
+    var array = [0,1,2,3];
 
 
 
-    var x = Math.floor( Math.random() * n );
+    var x = Math.floor( Math.random() * 4 );
 
     const daikichi = array[0];
     const shokichi = array[1];
@@ -60,13 +60,6 @@
       div.classList.add('box');
       
       div.addEventListener('click', () => {
-//         if (i === winner) {
-//           div.textContent = 'Win!';
-//           div.classList.add('win');
-//         } else {
-//           div.textContent = 'Lose!';
-//           div.classList.add('lose');
-//         }
         if (i === daikichi) {
           div.textContent = '大吉';
           div.classList.add('daikichi');
