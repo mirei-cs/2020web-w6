@@ -18,22 +18,12 @@
       text-align: center;
       line-height: 100px;
     }
-    .daikichi {
+    .win {
       background: red;
       border-radius: 50%;
       transform: rotate(360deg);
     }
-    .chukichi {
-      background: yellow;
-      border-radius: 30%;
-      transform: rotate(360deg);
-    }
-    .shokichi {
-      background: green;
-      border-radius: 20%;
-      transform: rotate(360deg);
-    }
-    .kyo {
+    .lose {
       background: blue;
       transform: scale(0.6);
   </style>
@@ -44,36 +34,27 @@
     'use strict';
     
     const n = 10;
-    var array = [0,1,2,3];
+    const winner = Math.floor(Math.random() * num); // 0 - 9
 
-
-
-    var x = Math.floor( Math.random() * 4 );
-
-    const daikichi = array[0];
-    const shokichi = array[1];
-    const chukchi = array[2];
-　　 const kyo = array[3];
-    
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < num; i++) {
       const div = document.createElement('div');
       div.classList.add('box');
-      
+
       div.addEventListener('click', () => {
-        if (i === daikichi) {
+
+        if (i === winner) {
           div.textContent = '大吉';
-          div.classList.add('daikichi');
-        } else if (i === shokichi){
-          div.textContent = '小吉';
-          div.classList.add('shokichi');
-        }else if (i === chukichi){
-          div.textContent = '中吉';
-          div.classList.add('chukichi');
-        }else if (i === kyo){
-          div.textContent = '凶';
-          div.classList.add('kyo');
+          div.classList.add('win');
+
+        } else {
+          var result = new Array('中吉', '小吉', '凶');
+          const loser = Math.floor(Math.random() * 3);
+          div.textContent = str[loser];
+          div.classList.add("lose");
         }
+
       });
+
 
       document.body.appendChild(div);
     }
